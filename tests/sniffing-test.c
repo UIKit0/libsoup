@@ -601,6 +601,15 @@ main (int argc, char **argv)
 	test_sniffing ("/type/image_png/home.jpg", "image/jpeg");
 	test_sniffing ("/type/image_png/tux.webp", "image/webp");
 
+	/* Test audio and video sniffing path */
+	test_sniffing ("/type/audio_mpeg/test.wav", "audio/wave");
+	test_sniffing ("/type/audio_mpeg/test.aiff", "audio/aiff");
+	test_sniffing ("/type/audio_mpeg/test.ogg", "application/ogg");
+	test_sniffing ("/type/video_theora/test.webm", "video/webm");
+
+	/* Test the MP4 sniffing path */
+	test_sniffing ("/unknown/test.mp4", "video/mp4");
+
 	/* The spec tells us to only use the last Content-Type header */
 
 	test_sniffing ("/multiple_headers/home.gif", "image/gif");
