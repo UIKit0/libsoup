@@ -597,6 +597,9 @@ main (int argc, char **argv)
 	/* Test the image sniffing path */
 
 	test_sniffing ("/type/image_png/home.gif", "image/gif");
+	test_sniffing ("/type/image_gif/home.png", "image/png");
+	test_sniffing ("/type/image_png/home.jpg", "image/jpeg");
+	test_sniffing ("/type/image_png/tux.webp", "image/webp");
 
 	/* The spec tells us to only use the last Content-Type header */
 
